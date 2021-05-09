@@ -1,5 +1,13 @@
+const model = require('../model')
+
 module.exports = {
-    index: function(req, res){
-        res.render('main/index', null);
+    index: async function(req, res){
+        let photos = await model.Photo.findAll({
+            order: [
+                ['regDate', 'DESC']
+            ]
+        });
+
+        res.render('main/index', photos);
     }
 }

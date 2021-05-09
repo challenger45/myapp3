@@ -1,4 +1,5 @@
 **/.DS_Store
 **/.idea
 **/node_modules
-**/multer-temporary-store
+/multer-temporary-store
+/public/assets/photos
