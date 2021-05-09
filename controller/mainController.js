@@ -8,6 +8,8 @@ module.exports = {
             ]
         });
 
-        res.render('main/index', photos);
+        res.render('main/index', {
+            photos: photos
+        });
     }
 }

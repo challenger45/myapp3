@@ -47,54 +47,12 @@
 					<a href="" id="upload-image">이미지 올리기</a>
 				</div>
 				<ul>
-					<li>
-						<a href="/assets/photos/im1.jpg" data-lightbox="h" class="image" style="background-image:url('/assets/photos/im1.jpg')">&nbsp;</a>
-						<a href="" class="del-button" title="삭제">삭제</a>
-					</li>
-					<li>
-						<a href="/assets/photos/im2.jpg" data-lightbox="h" class="image" style="background-image:url('/assets/photos/im2.jpg')">&nbsp;</a>
-						<a href="" class="del-button" title="삭제">삭제</a>
-					</li>
-					<li>
-						<a href="/assets/photos/im3.jpg" data-lightbox="h" class="image" style="background-image:url('/assets/photos/im3.jpg')">&nbsp;</a>
-						<a href="" class="del-button" title="삭제">삭제</a>
-					</li>
-					<li>
-						<a href="/assets/photos/im4.jpg" data-lightbox="h" class="image" style="background-image:url('/assets/photos/im4.jpg')">&nbsp;</a>
-						<a href="" class="del-button" title="삭제">삭제</a>
-					</li>
-					<li>
-						<a href="/assets/photos/im5.jpg" data-lightbox="h" class="image" style="background-image:url('/assets/photos/im5.jpg')">&nbsp;</a>
-						<a href="" class="del-button" title="삭제">삭제</a>
-					</li>
-					<li>
-						<a href="/assets/photos/im6.jpg" data-lightbox="h" class="image" style="background-image:url('/assets/photos/im6.jpg')">&nbsp;</a>
-						<a href="" class="del-button" title="삭제">삭제</a>
-					</li>
-					<li>
-						<a href="/assets/photos/im7.jpg" data-lightbox="h" class="image" style="background-image:url('/assets/photos/im7.jpg')">&nbsp;</a>
-						<a href="" class="del-button" title="삭제">삭제</a>
-					</li>
-					<li>
-						<a href="/assets/photos/im8.jpg" data-lightbox="h" class="image" style="background-image:url('/assets/photos/im8.jpg')">&nbsp;</a>
-						<a href="" class="del-button" title="삭제">삭제</a>
-					</li>
-					<li>
-						<a href="/assets/photos/im9.jpg" data-lightbox="h" class="image" style="background-image:url('/assets/photos/im9.jpg')">&nbsp;</a>
-						<a href="" class="del-button" title="삭제">삭제</a>
-					</li>
-					<li>
-						<a href="/assets/photos/im10.jpg" data-lightbox="h" class="image" style="background-image:url('/assets/photos/im10.jpg')">&nbsp;</a>
-						<a href="" class="del-button" title="삭제">삭제</a>
-					</li>
-					<li>
-						<a href="/assets/photos/im11.jpg" data-lightbox="h" class="image" style="background-image:url('/assets/photos/im11.jpg')">&nbsp;</a>
-						<a href="" class="del-button" title="삭제">삭제</a>
-					</li>
-					<li>
-						<a href="/assets/photos/im12.jpg" data-lightbox="h" class="image" style="background-image:url('/assets/photos/im12.jpg')">&nbsp;</a>
-						<a href="" class="del-button" title="삭제">삭제</a>
-					</li>
+					<% photos.forEach(function(photo, index){ %>
+						<li>
+							<a href="<%=photo.url%>" data-lightbox="h" class="image" style="background-image:url('<%=photo.url%>')">&nbsp;</a>
+							<a href="" class="del-button" title="삭제", data-no='<%=photo.no%>'>삭제</a>
+						</li>
+					<%})%>
 				</ul>
 			</div>
 				<div id="dialog-upload-form" title="이미지 업로드" style="display: none">
