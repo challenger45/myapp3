@@ -2,7 +2,7 @@ const model = require('../model')
 
 module.exports = {
     index: async function(req, res){
-        let photos = await model.Photo.findAll({
+        const photos = await model.Photo.findAll({
             order: [
                 ['regDate', 'DESC']
             ]

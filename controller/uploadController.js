@@ -5,7 +5,7 @@ const model = require('../model')
 
 module.exports = {
     upload: async function(req, res) {
-        let url = storeUploadFile(req.file);
+        const url = storePhoto(req.file);
         await model.Photo.create({
             filename: req.file.originalname,
             url: url,
@@ -15,12 +15,12 @@ module.exports = {
     }
 }
 
-const storeUploadFile = function(file) {
+const storePhoto = function(file) {
     try {
-        let content = fs.readFileSync(file.path);
+        const content = fs.readFileSync(file.path);
 
-        let url = path.join(process.env.STORE_LOCATION, file.filename) + path.extname(file.originalname);
-        let storePath = path.join(path.dirname(require.main.filename), process.env.STATIC_RESOURCES_DIRECTORY, url);
+        const url = path.join(process.env.STORE_LOCATION, file.filename) + path.extname(file.originalname);
+        const storePath = path.join(path.dirname(require.main.filename), process.env.STATIC_RESOURCES_DIRECTORY, url);
         
         fs.writeFileSync(storePath, content, {
             flag: 'w+'
