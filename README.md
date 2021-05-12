@@ -12,3 +12,15 @@
 2. db.env of mysql connection credential & Sequelize ORM Configuration
 #### 4. commands: npm install
 #### 5. services: sysvinit enable and start
+
+### 4. Deployment: Creating Stack
+```bash
+$ aws cloudformation create-stack --stack-name myapp /
+--template-body https://raw.githubusercontent.com/aws-bitacademy/aws-practices/master/ch06/01/ex02.json /
+--parameters ParameterKey=KeyName,ParameterValue={yourSSHkeyName} /
+ParameterKey=VPC,ParameterValue={yourVPCId} /
+ParameterKey=InstanceType,ParameterValue=t2.micro /
+ParameterKey=DBName,ParameterValue=myapp / 
+ParameterKey=DBUserName,ParameterValue=myapp /
+ParameterKey=DBUserPassword,ParameterValue={password}
+```
