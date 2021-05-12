@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const model = require('../model')
+const logger = require('../logging');
 
 module.exports = {
     upload: async function(req, res) {
@@ -30,6 +31,6 @@ const storePhoto = function(file) {
 
         return url;
     } catch (err) {
-        console.error(err)
+        logger.error(err)
     }
 }

@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": false,
+        "amount": 30
+    },
+    "auditLog": "/Users/kickscar/DoWork/VSCodeProjects/aws-examples/myapp3/logs/.9e8e2fe45ed5e5f56fdc9f14b45cd20d84302c12-audit.json",
+    "files": [
+        {
+            "date": 1620822904616,
+            "name": "/Users/kickscar/DoWork/VSCodeProjects/aws-examples/myapp3/logs/2021-05-12.log",
+            "hash": "db1bfb0e02070ff120007eff7994b00d"
+        }
+    ]
+}
