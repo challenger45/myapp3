@@ -9,7 +9,7 @@ module.exports = {
         const url = storePhoto(req.file);
         await model.Photo.create({
             filename: req.file.originalname,
-            url: url,
+            url: url.replace(/\\/gi, "/"),
             comment: req.body.comment
         })
         res.redirect('/');
